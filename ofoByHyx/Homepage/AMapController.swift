@@ -23,7 +23,7 @@ extension HomeController {
         // 设置周边检索的参数
         request.location = AMapGeoPoint.location(withLatitude: CGFloat(centerLocation.latitude), longitude: CGFloat(centerLocation.longitude))
         request.keywords = "餐馆" //查询关键字，多个关键字用“|”分割
-        request.radius = 500 //搜索半径为500米
+        request.radius = 1000 //搜索半径为1000米
         request.requireExtension = true // 返回扩展信息
         
         search.aMapPOIAroundSearch(request) // 调用 AMapSearchAPI 的 AMapPOIAroundSearch 并发起周边检索
@@ -109,6 +109,17 @@ extension HomeController {
     ///   - wasUserAction: 标识是否是用户动作
     func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
         if wasUserAction {
+            // 每次移动地图时，移除地图上之前搜索到的小黄车
+            var annotationsToBeRemoved: [MAAnnotation] = []
+            for annotation in mapView.annotations {
+                if annotation is MAUserLocation || annotation is MyPointAnnotation {
+                    continue
+                } else {
+                    annotationsToBeRemoved.append(annotation as! MAAnnotation)
+                }
+            }
+            mapView.removeAnnotations(annotationsToBeRemoved)
+            
             isMapMoved = true
             centerPoint.isLockedToScreen = true
             centerPointAnimation()
@@ -179,7 +190,7 @@ extension HomeController {
         
     }
     
-    /// 点击标注的监听
+    /// 点击地图上标注的监听
     ///
     /// - Parameters:
     ///   - mapView: 地图View
@@ -212,12 +223,15 @@ extension HomeController {
     /// - Returns: 生成的覆盖物Renderer
     func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
         if overlay is MAPolyline {
-//            centerPoint.isLockedToScreen = false
-            mapView.visibleMapRect = overlay.boundingMapRect // 地图可视区域为路线区域
+            print(overlay.boundingMapRect)
+            // 设置地图可视区域为获得的路线区域
+            mapView.visibleMapRect = overlay.boundingMapRect
+            // 设置地图可视区域比获得的路线区域大一个map zoom level，以便用户查看
+            mapView.setZoomLevel(mapView.zoomLevel - 1, animated: true)
             
             let renderer: MAPolylineRenderer = MAPolylineRenderer(overlay: overlay)
             renderer.lineWidth = 8.0
-            renderer.strokeColor = UIColor.cyan
+            renderer.strokeColor = UIColor(named: "themeColor")
             
             return renderer
         }
@@ -250,7 +264,7 @@ extension HomeController {
             timeDesc = walkMinutes.description + "分钟"
         }
         
-        let hintTitle = "步行" + timeDesc
+        let hintTitle = "步行约" + timeDesc
         let hintSubTitle = "距离" + walkManager.naviRoute!.routeLength.description + "米"
         
         FTIndicator.setIndicatorStyle(.dark)
