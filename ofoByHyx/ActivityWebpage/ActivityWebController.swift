@@ -27,7 +27,7 @@ class ActivityWebController: UIViewController {
         activityWebView.load(request)
     }
     
-    // 监听网页加载进度
+    /// 监听网页加载进度
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         //  加载进度条
         if keyPath == "estimatedProgress" {

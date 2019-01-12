@@ -29,15 +29,15 @@ class UserMenuController: UITableViewController {
         avatarImageView.cornerRadius = avatarImageView.frame.width / 2
     }
     
-    /**
-     * 在视图加载完毕后取消第一个section的点击效果,
-     * 若在viewDidLoad()中写，则还未加载到第一个section，会报空指针
-     */
+    /// 在视图加载完毕后取消第一个section的点击效果,
+    /// 若在viewDidLoad()中写，则还未加载到第一个section，会报空指针
+    ///
+    /// - Parameter animated: Bool
     override func viewDidAppear(_ animated: Bool) {
         tableView.cellForRow(at: [0, 0])?.selectionStyle = .none
     }
     
-    // 修改每个section之间的间距：修改section的header的大小
+    /// 修改每个section之间的间距：修改section的header的大小
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.1
     }
@@ -47,7 +47,10 @@ class UserMenuController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    // 选择头像监听
+    
+    /// 选择头像监听
+    ///
+    /// - Parameter sender: UITapGestureRecognizer
     @IBAction func chooseAvatar(_ sender: UITapGestureRecognizer) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         

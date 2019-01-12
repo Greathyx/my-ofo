@@ -19,9 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cbc-TK-M14">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="764-93-xZm" userLabel="Panel View" customClass="PanelView">
                                 <rect key="frame" x="-187.66666666666666" y="558.66666666666663" width="750.33333333333337" height="749.99999999999989"/>
                                 <subviews>
@@ -125,6 +122,9 @@
                                                 <real key="value" value="0.29999999999999999"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapLocateBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V5W-7z-tjP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -132,14 +132,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="764-93-xZm" firstAttribute="top" secondItem="gTv-Md-k95" secondAttribute="bottom" constant="5" id="1Xm-Be-gAe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cbc-TK-M14" secondAttribute="bottom" id="OZF-ez-kfl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cbc-TK-M14" secondAttribute="trailing" id="Pxc-F0-Lzo"/>
-                            <constraint firstItem="cbc-TK-M14" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SgM-GQ-bJI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTv-Md-k95" secondAttribute="trailing" constant="15" id="UBC-vO-Mxf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fp7-eQ-hPz" secondAttribute="bottom" constant="20" id="UXn-Sf-DPd"/>
                             <constraint firstItem="Fp7-eQ-hPz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wc0-Sd-ByB"/>
                             <constraint firstItem="764-93-xZm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="2" id="Wnq-TL-PyL"/>
-                            <constraint firstItem="cbc-TK-M14" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fBd-Ra-jVa"/>
                             <constraint firstItem="Fp7-eQ-hPz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fhF-0C-RlU"/>
                             <constraint firstItem="764-93-xZm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iff-ib-S7h"/>
                             <constraint firstItem="764-93-xZm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="2.3" id="mdv-NQ-Xff"/>

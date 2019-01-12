@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate {
 
     @IBOutlet weak var panelView: UIView!
     @IBOutlet weak var arrowBtn: UIButton!
@@ -17,6 +17,25 @@ class HomeController: UIViewController {
     @IBOutlet weak var positionStackView: UIStackView!
     // 右侧定位和客服按钮距离panelView的距离
     @IBOutlet weak var bottomToPanelConstrain: NSLayoutConstraint!
+    // 面板展开状态
+    var isPanelOpen = true
+    
+    // 高德地图map组件
+    var mapView: MAMapView!
+    // 高德地图搜索对象
+    var search: AMapSearchAPI!
+    // 地图中心固定点
+    var centerPoint: MyPointAnnotation!
+    var centerPointView: MAAnnotationView!
+    // 是否初次定位
+    var isFirstLocate = true
+    // 用户是否移动了地图
+    var isMapMoved = false
+    // 起点和终点坐标
+    var startPoint, endPoint: CLLocationCoordinate2D!
+    // 路径规划对象
+    var walkManager: AMapNaviWalkManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +50,47 @@ class HomeController: UIViewController {
         
         // 面板弧度，与父视图相同
         panelView.layer.cornerRadius = view.frame.width
+        
+        // 创建高德地图对象
+        mapView = MAMapView(frame: self.view.bounds)
+        mapView.delegate = self
+        // 构造主搜索对象 AMapSearchAPI，并设置代理
+        search = AMapSearchAPI()
+        search.delegate = self
+        
+        // 初始化 AMapNaviWalkManager
+        walkManager = AMapNaviWalkManager()
+        walkManager.delegate = self
+        
+        mapView.zoomLevel = 18 // 设置地图默认缩放大小
+        mapView.showsUserLocation = true // 显示定位蓝点
+        mapView.userTrackingMode = .follow // 实时更新定位
+        self.view.addSubview(mapView)
+        
+        // 将扫码用车面板等组件置于界面最上方
+        self.view.bringSubviewToFront(panelView)
+        self.view.bringSubviewToFront(tabBarStackView)
+        self.view.bringSubviewToFront(positionStackView)
     }
     
-    // 面板展开状态
-    var isPanelOpen = true
+    
+    /// 定位按钮监听
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func tapLocateBtn(_ sender: UIButton) {
+        isMapMoved = false
+        searchOfoNearby()
+    }
+
+    
+    /// 打开关闭面板按钮监听
+    ///
+    /// - Parameter sender: UIButton
     @IBAction func arrowBtnTap(_ sender: UIButton) {
         movePanelView()
     }
     
+    /// 打开关闭面板方法
     func movePanelView() {
         let deltaY = panelView.frame.height / 4.5
         let btnDeltaY = panelView.frame.height / 4
@@ -73,7 +125,9 @@ class HomeController: UIViewController {
         isPanelOpen = !isPanelOpen
     }
 
-    // 手势控制与action相关联
+    /// 滑动手势控制监听
+    ///
+    /// - Parameter sender: UIPanGestureRecognizer
     @IBAction func drag(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .changed:
@@ -87,6 +141,7 @@ class HomeController: UIViewController {
             break
         }
     }
+    
     /*
     // MARK: - Navigation
 

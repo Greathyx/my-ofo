@@ -6,9 +6,13 @@ target 'ofoByHyx' do
   use_frameworks!
 
   # Pods for ofoByHyx
+  # Gaode Map
   pod 'AMap3DMap'
   pod 'AMapSearch'
   pod 'AMapLocation'
   pod 'AMapNavi'
+  
+  # Hint alert
+  pod 'FTIndicator'
 
 end
