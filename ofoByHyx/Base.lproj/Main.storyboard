@@ -39,6 +39,9 @@
                                             <constraint firstAttribute="width" constant="190" id="uni-nS-teG"/>
                                         </constraints>
                                         <state key="normal" image="start_button_bg_scan"/>
+                                        <connections>
+                                            <segue destination="yY6-GR-4I8" kind="show" id="hU4-h8-Uc2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -528,6 +531,76 @@
             </objects>
             <point key="canvasLocation" x="-114" y="763"/>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="ACd-0q-C94">
+            <objects>
+                <viewController id="yY6-GR-4I8" userLabel="Scan View Controller" customClass="ScanController" customModule="ofoByHyx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uMO-8E-8Qf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-Ye-PVJ">
+                                <rect key="frame" x="0.0" y="632" width="375" height="146"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="BcJ-8s-Nol">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CAO-ZQ-qf2">
+                                                <rect key="frame" x="0.0" y="33.333333333333364" width="184.66666666666666" height="79.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aV-Vi-gal">
+                                                        <rect key="frame" x="64.666666666666671" y="0.0" width="55" height="55"/>
+                                                        <state key="normal" image="inputBlikeNo"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手动输入车牌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8G-7w-PSI">
+                                                        <rect key="frame" x="55.333333333333336" y="65" width="73.666666666666657" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8Q-82-eOv">
+                                                <rect key="frame" x="190.66666666666663" y="33.333333333333364" width="184.33333333333337" height="79.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkS-9H-lyP">
+                                                        <rect key="frame" x="64.666666666666686" y="0.0" width="55" height="55"/>
+                                                        <state key="normal" image="btn_unenableTorch_w"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手电筒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWG-Z1-5qh">
+                                                        <rect key="frame" x="73.666666666666657" y="65" width="37" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="BcJ-8s-Nol" firstAttribute="leading" secondItem="v5Y-Ye-PVJ" secondAttribute="leading" id="9qa-9O-OTy"/>
+                                    <constraint firstAttribute="bottom" secondItem="BcJ-8s-Nol" secondAttribute="bottom" id="N9v-HU-8Me"/>
+                                    <constraint firstItem="BcJ-8s-Nol" firstAttribute="top" secondItem="v5Y-Ye-PVJ" secondAttribute="top" id="Trp-oU-Cgn"/>
+                                    <constraint firstAttribute="trailing" secondItem="BcJ-8s-Nol" secondAttribute="trailing" id="V4W-pU-uiX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v5Y-Ye-PVJ" firstAttribute="leading" secondItem="fgu-zZ-lra" secondAttribute="leading" id="MUR-p3-J1w"/>
+                            <constraint firstItem="fgu-zZ-lra" firstAttribute="bottom" secondItem="v5Y-Ye-PVJ" secondAttribute="bottom" id="a22-Wz-re9"/>
+                            <constraint firstItem="fgu-zZ-lra" firstAttribute="trailing" secondItem="v5Y-Ye-PVJ" secondAttribute="trailing" id="cft-w1-HgP"/>
+                            <constraint firstItem="v5Y-Ye-PVJ" firstAttribute="height" secondItem="uMO-8E-8Qf" secondAttribute="height" multiplier="0.18" id="rmy-Dt-IMT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fgu-zZ-lra"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Km6-6q-QCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="763"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GrayCerTification_homePage" width="13" height="9.6666669845581055"/>
@@ -537,11 +610,13 @@
         <image name="HomePage_MyStroke" width="20" height="20"/>
         <image name="HomePage_MyWallet" width="20" height="20"/>
         <image name="HomePage_UserGuide" width="20" height="20"/>
-        <image name="UserInfo_defaultIcon" width="120" height="120"/>
+        <image name="UserInfo_defaultIcon" width="80" height="80"/>
         <image name="arrowdown" width="22" height="22"/>
         <image name="backIndicator" width="20" height="20"/>
+        <image name="btn_unenableTorch_w" width="55" height="55"/>
         <image name="gift_icon" width="22.666666030883789" height="22.666666030883789"/>
         <image name="icon_slide_usage_guild2" width="22" height="22"/>
+        <image name="inputBlikeNo" width="55" height="55"/>
         <image name="leftBottomBackgroundImage" width="40" height="40"/>
         <image name="leftBottomImage" width="40" height="40"/>
         <image name="start_button_bg_scan" width="189" height="189"/>

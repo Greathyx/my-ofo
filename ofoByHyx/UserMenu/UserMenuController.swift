@@ -34,6 +34,7 @@ class UserMenuController: UITableViewController {
     ///
     /// - Parameter animated: Bool
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         tableView.cellForRow(at: [0, 0])?.selectionStyle = .none
     }
     
