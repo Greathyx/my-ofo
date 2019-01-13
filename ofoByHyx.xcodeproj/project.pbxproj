@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4F2A8C3521E62AED009283F2 /* AvatarSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8C3421E62AED009283F2 /* AvatarSelect.swift */; };
-		4F2A8C3E21E85504009283F2 /* AMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8C3D21E85504009283F2 /* AMap.swift */; };
+		4F2A8C3E21E85504009283F2 /* AMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8C3D21E85504009283F2 /* AMapController.swift */; };
 		4F2A8C4221E87848009283F2 /* MyPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8C4121E87848009283F2 /* MyPointAnnotation.swift */; };
+		4F2A8CAB21E9D3A8009283F2 /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CAA21E9D3A8009283F2 /* ScanController.swift */; };
+		4F2A8CC621E9EBDF009283F2 /* LBXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CBF21E9EBDF009283F2 /* LBXScanNetAnimation.swift */; };
+		4F2A8CC721E9EBDF009283F2 /* LBXScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC021E9EBDF009283F2 /* LBXScanView.swift */; };
+		4F2A8CC821E9EBDF009283F2 /* LBXScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC121E9EBDF009283F2 /* LBXScanViewController.swift */; };
+		4F2A8CC921E9EBDF009283F2 /* LBXScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC221E9EBDF009283F2 /* LBXScanLineAnimation.swift */; };
+		4F2A8CCA21E9EBDF009283F2 /* LBXScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC321E9EBDF009283F2 /* LBXScanViewStyle.swift */; };
+		4F2A8CCB21E9EBDF009283F2 /* LBXPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC421E9EBDF009283F2 /* LBXPermissions.swift */; };
+		4F2A8CCC21E9EBDF009283F2 /* LBXScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A8CC521E9EBDF009283F2 /* LBXScanWrapper.swift */; };
 		4F3CC0FB21E4802300C66E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CC0FA21E4802300C66E7E /* AppDelegate.swift */; };
 		4F3CC10021E4802300C66E7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CC0FE21E4802300C66E7E /* Main.storyboard */; };
 		4F3CC10221E4802400C66E7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CC10121E4802400C66E7E /* Assets.xcassets */; };
@@ -19,14 +27,25 @@
 		4F3CC11421E5B82D00C66E7E /* UserMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CC11321E5B82D00C66E7E /* UserMenuController.swift */; };
 		4F3CC11621E5CA0200C66E7E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CC11521E5CA0200C66E7E /* HomeController.swift */; };
 		4F469D2A21E5CCE9009E1D4D /* UIViewLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F469D2921E5CCE9009E1D4D /* UIViewLayerHelper.swift */; };
+		4F6E8A7E21EB1E6D00964B8D /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A7D21EB1E6D00964B8D /* InputController.swift */; };
+		4F6E8A8321EB6B2100964B8D /* AboutMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */; };
+		4F6E8A8521EB87C800964B8D /* TorchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A8421EB87C800964B8D /* TorchHelper.swift */; };
 		E4D63069EE3DCF8FAB7B452F /* Pods_ofoByHyx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F838F9531B4B941379528258 /* Pods_ofoByHyx.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F2A8C3421E62AED009283F2 /* AvatarSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelect.swift; sourceTree = "<group>"; };
 		4F2A8C3621E6EDD1009283F2 /* ofoByHyx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ofoByHyx-Bridging-Header.h"; sourceTree = "<group>"; };
-		4F2A8C3D21E85504009283F2 /* AMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMap.swift; sourceTree = "<group>"; };
+		4F2A8C3D21E85504009283F2 /* AMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMapController.swift; sourceTree = "<group>"; };
 		4F2A8C4121E87848009283F2 /* MyPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPointAnnotation.swift; sourceTree = "<group>"; };
+		4F2A8CAA21E9D3A8009283F2 /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
+		4F2A8CBF21E9EBDF009283F2 /* LBXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanNetAnimation.swift; sourceTree = "<group>"; };
+		4F2A8CC021E9EBDF009283F2 /* LBXScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanView.swift; sourceTree = "<group>"; };
+		4F2A8CC121E9EBDF009283F2 /* LBXScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewController.swift; sourceTree = "<group>"; };
+		4F2A8CC221E9EBDF009283F2 /* LBXScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanLineAnimation.swift; sourceTree = "<group>"; };
+		4F2A8CC321E9EBDF009283F2 /* LBXScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanViewStyle.swift; sourceTree = "<group>"; };
+		4F2A8CC421E9EBDF009283F2 /* LBXPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXPermissions.swift; sourceTree = "<group>"; };
+		4F2A8CC521E9EBDF009283F2 /* LBXScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBXScanWrapper.swift; sourceTree = "<group>"; };
 		4F3CC0F721E4802300C66E7E /* ofoByHyx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofoByHyx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CC0FA21E4802300C66E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3CC0FF21E4802300C66E7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +57,9 @@
 		4F3CC11321E5B82D00C66E7E /* UserMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuController.swift; sourceTree = "<group>"; };
 		4F3CC11521E5CA0200C66E7E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4F469D2921E5CCE9009E1D4D /* UIViewLayerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewLayerHelper.swift; sourceTree = "<group>"; };
+		4F6E8A7D21EB1E6D00964B8D /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeController.swift; sourceTree = "<group>"; };
+		4F6E8A8421EB87C800964B8D /* TorchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchHelper.swift; sourceTree = "<group>"; };
 		B94EACB80D78063B143D074A /* Pods-ofoByHyx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofoByHyx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofoByHyx/Pods-ofoByHyx.release.xcconfig"; sourceTree = "<group>"; };
 		CBDD0B7A2A00D1848FFCE329 /* Pods-ofoByHyx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofoByHyx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofoByHyx/Pods-ofoByHyx.debug.xcconfig"; sourceTree = "<group>"; };
 		F838F9531B4B941379528258 /* Pods_ofoByHyx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofoByHyx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				4F3CC11521E5CA0200C66E7E /* HomeController.swift */,
-				4F2A8C3D21E85504009283F2 /* AMap.swift */,
+				4F2A8C3D21E85504009283F2 /* AMapController.swift */,
 				4F2A8C4121E87848009283F2 /* MyPointAnnotation.swift */,
+				4F6E8A7D21EB1E6D00964B8D /* InputController.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -78,7 +101,9 @@
 		4F2A8C3F21E86319009283F2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F2A8CBE21E9EBDF009283F2 /* SwiftScan */,
 				4F469D2921E5CCE9009E1D4D /* UIViewLayerHelper.swift */,
+				4F6E8A8421EB87C800964B8D /* TorchHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -89,6 +114,28 @@
 				4F3CC10F21E5997500C66E7E /* ActivityWebController.swift */,
 			);
 			path = ActivityWebpage;
+			sourceTree = "<group>";
+		};
+		4F2A8CAE21E9D8C8009283F2 /* QrCodeScan */ = {
+			isa = PBXGroup;
+			children = (
+				4F2A8CAA21E9D3A8009283F2 /* ScanController.swift */,
+			);
+			path = QrCodeScan;
+			sourceTree = "<group>";
+		};
+		4F2A8CBE21E9EBDF009283F2 /* SwiftScan */ = {
+			isa = PBXGroup;
+			children = (
+				4F2A8CBF21E9EBDF009283F2 /* LBXScanNetAnimation.swift */,
+				4F2A8CC021E9EBDF009283F2 /* LBXScanView.swift */,
+				4F2A8CC121E9EBDF009283F2 /* LBXScanViewController.swift */,
+				4F2A8CC221E9EBDF009283F2 /* LBXScanLineAnimation.swift */,
+				4F2A8CC321E9EBDF009283F2 /* LBXScanViewStyle.swift */,
+				4F2A8CC421E9EBDF009283F2 /* LBXPermissions.swift */,
+				4F2A8CC521E9EBDF009283F2 /* LBXScanWrapper.swift */,
+			);
+			path = SwiftScan;
 			sourceTree = "<group>";
 		};
 		4F3CC0EE21E4802300C66E7E = {
@@ -112,12 +159,14 @@
 		4F3CC0F921E4802300C66E7E /* ofoByHyx */ = {
 			isa = PBXGroup;
 			children = (
+				4F6E8A7F21EB4D6E00964B8D /* AboutMe */,
 				4F2A8C4021E8633F009283F2 /* ActivityWebpage */,
 				4F2A8C3F21E86319009283F2 /* Utils */,
 				4F2A8C3921E85433009283F2 /* Homepage */,
 				4F2A8C3321E62A69009283F2 /* UserMenu */,
 				4F3CC0FA21E4802300C66E7E /* AppDelegate.swift */,
 				4F3CC0FE21E4802300C66E7E /* Main.storyboard */,
+				4F2A8CAE21E9D8C8009283F2 /* QrCodeScan */,
 				4F3CC10121E4802400C66E7E /* Assets.xcassets */,
 				4F3CC10321E4802400C66E7E /* LaunchScreen.storyboard */,
 				4F3CC10621E4802400C66E7E /* Info.plist */,
@@ -133,6 +182,14 @@
 				F838F9531B4B941379528258 /* Pods_ofoByHyx.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F6E8A7F21EB4D6E00964B8D /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */,
+			);
+			path = AboutMe;
 			sourceTree = "<group>";
 		};
 		A88C473B175D98513F8CF755 /* Pods */ = {
@@ -295,14 +352,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2A8CCA21E9EBDF009283F2 /* LBXScanViewStyle.swift in Sources */,
 				4F3CC11021E5997500C66E7E /* ActivityWebController.swift in Sources */,
 				4F3CC0FB21E4802300C66E7E /* AppDelegate.swift in Sources */,
 				4F2A8C3521E62AED009283F2 /* AvatarSelect.swift in Sources */,
 				4F3CC11421E5B82D00C66E7E /* UserMenuController.swift in Sources */,
+				4F6E8A8321EB6B2100964B8D /* AboutMeController.swift in Sources */,
 				4F469D2A21E5CCE9009E1D4D /* UIViewLayerHelper.swift in Sources */,
+				4F2A8CAB21E9D3A8009283F2 /* ScanController.swift in Sources */,
+				4F2A8CCB21E9EBDF009283F2 /* LBXPermissions.swift in Sources */,
+				4F6E8A8521EB87C800964B8D /* TorchHelper.swift in Sources */,
+				4F2A8CC621E9EBDF009283F2 /* LBXScanNetAnimation.swift in Sources */,
+				4F2A8CC721E9EBDF009283F2 /* LBXScanView.swift in Sources */,
+				4F6E8A7E21EB1E6D00964B8D /* InputController.swift in Sources */,
+				4F2A8CC821E9EBDF009283F2 /* LBXScanViewController.swift in Sources */,
+				4F2A8CCC21E9EBDF009283F2 /* LBXScanWrapper.swift in Sources */,
 				4F2A8C4221E87848009283F2 /* MyPointAnnotation.swift in Sources */,
+				4F2A8CC921E9EBDF009283F2 /* LBXScanLineAnimation.swift in Sources */,
 				4F3CC11621E5CA0200C66E7E /* HomeController.swift in Sources */,
-				4F2A8C3E21E85504009283F2 /* AMap.swift in Sources */,
+				4F2A8C3E21E85504009283F2 /* AMapController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,5 +61,5 @@ class ScanController: LBXScanViewController {
             flashBtn.setImage(UIImage(named: "btn_unenableTorch_w"), for: .normal)
         }
     }
-
+    
 }

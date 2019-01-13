@@ -19,12 +19,11 @@ class UserMenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 修改每个section之间的间距：修改section的footer的大小
-        tableView.sectionFooterHeight = 10
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.navigationItem.title = "用户中心"
         
+        // 修改每个section之间的间距：修改section的footer的大小
+        tableView.sectionFooterHeight = 8
+
         // 设置头像图片为正圆形
         avatarImageView.cornerRadius = avatarImageView.frame.width / 2
     }
@@ -36,6 +35,12 @@ class UserMenuController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.cellForRow(at: [0, 0])?.selectionStyle = .none
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 定制关于作者页面返回按钮上无文字
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     /// 修改每个section之间的间距：修改section的header的大小

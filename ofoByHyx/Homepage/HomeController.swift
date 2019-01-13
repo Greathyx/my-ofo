@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import FTIndicator
 
-class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate {
+class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var panelView: UIView!
     @IBOutlet weak var arrowBtn: UIButton!
     @IBOutlet weak var useBikeBtn: UIButton!
     @IBOutlet weak var tabBarStackView: UIStackView!
     @IBOutlet weak var positionStackView: UIStackView!
+    @IBOutlet weak var inputPanelView: UIView!
+    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var useBikeBtn_input: UIButton!
+    @IBOutlet weak var flashBtn: UIButton!
+    @IBOutlet weak var voiceBtn: UIButton!
+
+    var isFlashOn = false
+    var isVoiceOn = true
+    
+    // 是否展示手动输入车牌面板
+    var showInputPanel = false
+    
     // 右侧定位和客服按钮距离panelView的距离
     @IBOutlet weak var bottomToPanelConstrain: NSLayoutConstraint!
     // 面板展开状态
@@ -37,19 +50,23 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
     var walkManager: AMapNaviWalkManager!
     
     
+    // MARK: - 初始化
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         // 动态设置导航条上的按钮图片且保持图片原来的颜色
         self.navigationItem.leftBarButtonItem?.image = UIImage(named: "yellowBikeLogo")?.withRenderingMode(.alwaysOriginal)
-        self.navigationItem.rightBarButtonItem?.image = UIImage(named: "rightTopImage")?.withRenderingMode(.alwaysOriginal)
+        
+        initViews()
         
         // 去掉导航条底部的分割线
         navigationController?.navigationBar.shadowImage = UIImage()
         
         // 面板弧度，与父视图相同
         panelView.layer.cornerRadius = view.frame.width
+        inputPanelView.layer.cornerRadius = view.frame.width
         
         // 创建高德地图对象
         mapView = MAMapView(frame: self.view.bounds)
@@ -71,8 +88,37 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
         self.view.bringSubviewToFront(panelView)
         self.view.bringSubviewToFront(tabBarStackView)
         self.view.bringSubviewToFront(positionStackView)
+        self.view.bringSubviewToFront(inputPanelView)
+        
+        // 注册键盘将要出现通知
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification,object: nil)
+        // 注册键盘将要隐藏通知
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification,object: nil)
     }
     
+    /// 初始化视图
+    func initViews() {
+        inputPanelView.isHidden = !showInputPanel
+        panelView.isHidden = showInputPanel
+        tabBarStackView.isHidden = showInputPanel
+        positionStackView.isHidden = showInputPanel
+        
+        if showInputPanel {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "icon_titlebar_close")?.withRenderingMode(.alwaysOriginal)
+            inputTextField.becomeFirstResponder()
+        } else {
+            self.navigationItem.rightBarButtonItem?.image = UIImage()
+        }
+        
+        inputTextField.layer.borderWidth = 1
+        inputTextField.layer.cornerRadius = 22
+        inputTextField.layer.masksToBounds = true
+        inputTextField.layer.borderColor = UIColor(named: "themeColor")?.cgColor
+        inputTextField.delegate = self
+    }
+    
+    
+    // MARK: - 主页面
     
     /// 定位按钮监听
     ///
@@ -81,7 +127,6 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
         isMapMoved = false
         searchOfoNearby()
     }
-
     
     /// 打开关闭面板按钮监听
     ///
@@ -92,8 +137,8 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
     
     /// 打开关闭面板方法
     func movePanelView() {
-        let deltaY = panelView.frame.height / 4.5
-        let btnDeltaY = panelView.frame.height / 4
+        let deltaY = panelView.frame.height * 0.5
+        let btnDeltaY = panelView.frame.height
         
         if isPanelOpen {
             arrowBtn.setImage(UIImage(named: "arrowup"), for: .normal)
@@ -142,14 +187,81 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
         }
     }
     
-    /*
+    
+    // MARK: - 手动输入车牌面板
+    
+    @IBAction func openInputPanel(segue: UIStoryboardSegue) {
+        self.inputPanelView.transform = .identity
+        showInputPanel = true
+        initViews()
+    }
+    
+    /// 关闭手动输入车牌面板
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func closeInputPanel(_ sender: UIBarButtonItem) {
+        
+        panelView.isHidden = false
+        tabBarStackView.isHidden = false
+        positionStackView.isHidden = false
+        inputTextField.resignFirstResponder()
+        
+        let deltaY = panelView.frame.height
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.inputPanelView.transform = CGAffineTransform(translationX: 0, y: deltaY)
+        }) { (finished: Bool) in
+            self.showInputPanel = false
+            self.initViews()
+        }
+        
+    }
+    
+    /// 取消选中输入框
+    ///
+    /// - Parameter sender: UITapGestureRecognizer
+    @IBAction func deSelectTextField(_ sender: UITapGestureRecognizer) {
+        inputTextField.resignFirstResponder()
+    }
+    
+    @IBAction func tapUseBikeBtn_Input(_ sender: UIButton) {
+    }
+    
+    /// 开关手电筒监听
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func tapFlashBtn(_ sender: UIButton) {
+        changeTorchState()
+        
+        isFlashOn = !isFlashOn
+        if isFlashOn {
+            flashBtn.setImage(UIImage(named: "torch_open_icon"), for: .normal)
+        } else {
+            flashBtn.setImage(UIImage(named: "torch_close_icon"), for: .normal)
+        }
+    }
+    
+    /// 开关声音按钮监听
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func tapVoiceBtn(_ sender: UIButton) {
+        isVoiceOn = !isVoiceOn
+        
+        if isVoiceOn {
+            voiceBtn.setImage(UIImage(named: "voice_icon"), for: .normal)
+        } else {
+            voiceBtn.setImage(UIImage(named: "voice_close"), for: .normal)
+        }
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        FTIndicator.dismissNotification()
     }
-    */
-
+    
 }

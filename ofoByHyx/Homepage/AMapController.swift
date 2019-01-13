@@ -37,6 +37,7 @@ extension HomeController {
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         
         guard response.count > 0 else {
+            FTIndicator.showNotification(withTitle: "附近没有小黄车", message: nil)
             return
         }
         
