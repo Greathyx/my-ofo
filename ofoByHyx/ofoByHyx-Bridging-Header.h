@@ -12,3 +12,5 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 // 导航，路线规划
 #import <AMapNaviKit/AMapNaviKit.h>
+// Lean Cloud 头文件
+#import <AVOSCloud/AVOSCloud.h>

@@ -14,5 +14,10 @@ target 'ofoByHyx' do
   
   # Hint alert
   pod 'FTIndicator'
+  
+  # Play Sound
+  pod 'SwiftySound'
 
+  # Lean Cloud 数据存储、短信、云引擎调用等基础服务模块
+  pod 'AVOSCloud'
 end

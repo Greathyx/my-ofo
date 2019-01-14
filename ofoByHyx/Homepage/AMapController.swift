@@ -37,7 +37,7 @@ extension HomeController {
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         
         guard response.count > 0 else {
-            FTIndicator.showNotification(withTitle: "附近没有小黄车", message: nil)
+            FTIndicator.showInfo(withMessage: "附近没有小黄车")
             return
         }
         
@@ -269,7 +269,6 @@ extension HomeController {
         let hintTitle = "距离目的地" + walkManager.naviRoute!.routeLength.description + "米"
         let hintSubTitle = "步行约" + timeDesc
         
-        FTIndicator.setIndicatorStyle(.dark)
         FTIndicator.showNotification(with: UIImage(named: "clock"), title: hintTitle, message: hintSubTitle, autoDismiss: false, tapHandler: nil, completion: nil)
     }
     

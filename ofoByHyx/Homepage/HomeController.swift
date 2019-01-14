@@ -8,6 +8,7 @@
 
 import UIKit
 import FTIndicator
+import SwiftySound
 
 class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, AMapNaviWalkManagerDelegate, UITextFieldDelegate {
 
@@ -98,6 +99,8 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
     
     /// 初始化视图
     func initViews() {
+        FTIndicator.setIndicatorStyle(.dark) // 设置提醒样式为深色
+        
         inputPanelView.isHidden = !showInputPanel
         panelView.isHidden = showInputPanel
         tabBarStackView.isHidden = showInputPanel
@@ -110,6 +113,11 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
             self.navigationItem.rightBarButtonItem?.image = UIImage()
         }
         
+        if inputTextField.text?.count ?? 0 <= 0 {
+           useBikeBtn_input.isEnabled = false
+        }
+        
+        inputTextField.text = ""
         inputTextField.layer.borderWidth = 1
         inputTextField.layer.cornerRadius = 22
         inputTextField.layer.masksToBounds = true
@@ -225,6 +233,45 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
     }
     
     @IBAction func tapUseBikeBtn_Input(_ sender: UIButton) {
+        
+        LeanCloudQuery.getUnlockCode(license_plate: inputTextField.text!) { (unlock_code) in
+            if let code = unlock_code {
+                let codeArray: [String] = unlock_code!.map {
+                    return $0.description
+                }
+                
+                if self.isVoiceOn {
+                    var delay: TimeInterval = 0.0
+                    // "您的解锁码为_D.wav"音频时长
+                    let unlockVoiceDuration = SoundHelper.getDurationSecs(audioURL: Bundle.main.url(forResource: "您的解锁码为_D", withExtension: "wav")!)
+                    
+                    // 播放解锁码声音
+                    Sound.play(file: "您的解锁码为_D.wav")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + unlockVoiceDuration) {
+                        for code in codeArray {
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
+                                // 每段音频延迟1s播放
+                                Sound.play(file: code + "_D.wav")
+                            }
+                            let numVoiceDuration = SoundHelper.getDurationSecs(audioURL: Bundle.main.url(forResource: code + "_D", withExtension: "wav")!)
+                            delay += numVoiceDuration
+                        }
+                    }
+                }
+                
+                // 弹出解锁码对话框
+                let alertController = UIAlertController(title: "您的解锁码为", message: code, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "知道了", style: .default, handler: { (_) in
+                    if self.isVoiceOn {
+                        Sound.play(file: "上车前_LH.wav")
+                    }
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                FTIndicator.showInfo(withMessage: "车牌号不存在")
+            }
+        }
     }
     
     /// 开关手电筒监听
@@ -262,6 +309,7 @@ class HomeController: UIViewController, MAMapViewDelegate, AMapSearchDelegate, A
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         FTIndicator.dismissNotification()
+        Sound.stopAll()
     }
     
 }
