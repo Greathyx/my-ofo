@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVOSCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         AMapServices.shared().apiKey = "87f4e7a60c473ab6f0140799f2cfa4b9"
         AMapServices.shared().enableHTTPS = true
+        
+        AVOSCloud.setApplicationId("WOH56815L9e6uCTGbuk95Ln7-gzGzoHsz", clientKey: "JGn2lRCGbOtXeRrmnt0IYUxv")
         
         return true
     }

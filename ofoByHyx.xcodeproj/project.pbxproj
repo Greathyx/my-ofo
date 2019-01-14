@@ -30,6 +30,22 @@
 		4F6E8A7E21EB1E6D00964B8D /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A7D21EB1E6D00964B8D /* InputController.swift */; };
 		4F6E8A8321EB6B2100964B8D /* AboutMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */; };
 		4F6E8A8521EB87C800964B8D /* TorchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A8421EB87C800964B8D /* TorchHelper.swift */; };
+		4F6E8A8721EC653700964B8D /* LeanCloudQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8A8621EC653700964B8D /* LeanCloudQuery.swift */; };
+		4F6E8A9F21ECA30B00964B8D /* 2_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9621ECA30800964B8D /* 2_D.wav */; };
+		4F6E8AA021ECA30B00964B8D /* 0_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9721ECA30800964B8D /* 0_D.wav */; };
+		4F6E8AA121ECA30B00964B8D /* 3_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9821ECA30800964B8D /* 3_D.wav */; };
+		4F6E8AA221ECA30B00964B8D /* 7_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9921ECA30900964B8D /* 7_D.wav */; };
+		4F6E8AA321ECA30B00964B8D /* 6_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9A21ECA30900964B8D /* 6_D.wav */; };
+		4F6E8AA421ECA30B00964B8D /* 9_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9B21ECA30A00964B8D /* 9_D.wav */; };
+		4F6E8AA521ECA30B00964B8D /* 1_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9C21ECA30A00964B8D /* 1_D.wav */; };
+		4F6E8AA621ECA30B00964B8D /* 4_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9D21ECA30B00964B8D /* 4_D.wav */; };
+		4F6E8AA721ECA30B00964B8D /* 8_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8A9E21ECA30B00964B8D /* 8_D.wav */; };
+		4F6E8AAC21ECA51900964B8D /* 骑行结束_LH.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8AA821ECA51700964B8D /* 骑行结束_LH.wav */; };
+		4F6E8AAD21ECA51900964B8D /* 您的解锁码为_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8AA921ECA51700964B8D /* 您的解锁码为_D.wav */; };
+		4F6E8AAE21ECA51900964B8D /* 上车前_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8AAA21ECA51700964B8D /* 上车前_D.wav */; };
+		4F6E8AAF21ECA51900964B8D /* 骑行结束_D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8AAB21ECA51800964B8D /* 骑行结束_D.wav */; };
+		4F6E8AB121ECA63C00964B8D /* 上车前_LH.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E8AB021ECA63C00964B8D /* 上车前_LH.wav */; };
+		4F6E8AB821ECBF4000964B8D /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6E8AB721ECBF4000964B8D /* SoundHelper.swift */; };
 		E4D63069EE3DCF8FAB7B452F /* Pods_ofoByHyx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F838F9531B4B941379528258 /* Pods_ofoByHyx.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +76,22 @@
 		4F6E8A7D21EB1E6D00964B8D /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeController.swift; sourceTree = "<group>"; };
 		4F6E8A8421EB87C800964B8D /* TorchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchHelper.swift; sourceTree = "<group>"; };
+		4F6E8A8621EC653700964B8D /* LeanCloudQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudQuery.swift; sourceTree = "<group>"; };
+		4F6E8A9621ECA30800964B8D /* 2_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2_D.wav; sourceTree = "<group>"; };
+		4F6E8A9721ECA30800964B8D /* 0_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0_D.wav; sourceTree = "<group>"; };
+		4F6E8A9821ECA30800964B8D /* 3_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3_D.wav; sourceTree = "<group>"; };
+		4F6E8A9921ECA30900964B8D /* 7_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7_D.wav; sourceTree = "<group>"; };
+		4F6E8A9A21ECA30900964B8D /* 6_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6_D.wav; sourceTree = "<group>"; };
+		4F6E8A9B21ECA30A00964B8D /* 9_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 9_D.wav; sourceTree = "<group>"; };
+		4F6E8A9C21ECA30A00964B8D /* 1_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1_D.wav; sourceTree = "<group>"; };
+		4F6E8A9D21ECA30B00964B8D /* 4_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4_D.wav; sourceTree = "<group>"; };
+		4F6E8A9E21ECA30B00964B8D /* 8_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 8_D.wav; sourceTree = "<group>"; };
+		4F6E8AA821ECA51700964B8D /* 骑行结束_LH.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "骑行结束_LH.wav"; sourceTree = "<group>"; };
+		4F6E8AA921ECA51700964B8D /* 您的解锁码为_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "您的解锁码为_D.wav"; sourceTree = "<group>"; };
+		4F6E8AAA21ECA51700964B8D /* 上车前_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "上车前_D.wav"; sourceTree = "<group>"; };
+		4F6E8AAB21ECA51800964B8D /* 骑行结束_D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "骑行结束_D.wav"; sourceTree = "<group>"; };
+		4F6E8AB021ECA63C00964B8D /* 上车前_LH.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "上车前_LH.wav"; sourceTree = "<group>"; };
+		4F6E8AB721ECBF4000964B8D /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
 		B94EACB80D78063B143D074A /* Pods-ofoByHyx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofoByHyx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofoByHyx/Pods-ofoByHyx.release.xcconfig"; sourceTree = "<group>"; };
 		CBDD0B7A2A00D1848FFCE329 /* Pods-ofoByHyx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofoByHyx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofoByHyx/Pods-ofoByHyx.debug.xcconfig"; sourceTree = "<group>"; };
 		F838F9531B4B941379528258 /* Pods_ofoByHyx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofoByHyx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +136,8 @@
 				4F2A8CBE21E9EBDF009283F2 /* SwiftScan */,
 				4F469D2921E5CCE9009E1D4D /* UIViewLayerHelper.swift */,
 				4F6E8A8421EB87C800964B8D /* TorchHelper.swift */,
+				4F6E8A8621EC653700964B8D /* LeanCloudQuery.swift */,
+				4F6E8AB721ECBF4000964B8D /* SoundHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -159,6 +193,7 @@
 		4F3CC0F921E4802300C66E7E /* ofoByHyx */ = {
 			isa = PBXGroup;
 			children = (
+				4F6E8A9321ECA12100964B8D /* VoiceSource */,
 				4F6E8A7F21EB4D6E00964B8D /* AboutMe */,
 				4F2A8C4021E8633F009283F2 /* ActivityWebpage */,
 				4F2A8C3F21E86319009283F2 /* Utils */,
@@ -190,6 +225,27 @@
 				4F6E8A8221EB6B2100964B8D /* AboutMeController.swift */,
 			);
 			path = AboutMe;
+			sourceTree = "<group>";
+		};
+		4F6E8A9321ECA12100964B8D /* VoiceSource */ = {
+			isa = PBXGroup;
+			children = (
+				4F6E8AB021ECA63C00964B8D /* 上车前_LH.wav */,
+				4F6E8AA921ECA51700964B8D /* 您的解锁码为_D.wav */,
+				4F6E8AAB21ECA51800964B8D /* 骑行结束_D.wav */,
+				4F6E8AA821ECA51700964B8D /* 骑行结束_LH.wav */,
+				4F6E8AAA21ECA51700964B8D /* 上车前_D.wav */,
+				4F6E8A9721ECA30800964B8D /* 0_D.wav */,
+				4F6E8A9C21ECA30A00964B8D /* 1_D.wav */,
+				4F6E8A9621ECA30800964B8D /* 2_D.wav */,
+				4F6E8A9821ECA30800964B8D /* 3_D.wav */,
+				4F6E8A9D21ECA30B00964B8D /* 4_D.wav */,
+				4F6E8A9A21ECA30900964B8D /* 6_D.wav */,
+				4F6E8A9921ECA30900964B8D /* 7_D.wav */,
+				4F6E8A9E21ECA30B00964B8D /* 8_D.wav */,
+				4F6E8A9B21ECA30A00964B8D /* 9_D.wav */,
+			);
+			path = VoiceSource;
 			sourceTree = "<group>";
 		};
 		A88C473B175D98513F8CF755 /* Pods */ = {
@@ -268,9 +324,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6E8A9F21ECA30B00964B8D /* 2_D.wav in Resources */,
+				4F6E8AB121ECA63C00964B8D /* 上车前_LH.wav in Resources */,
+				4F6E8AAE21ECA51900964B8D /* 上车前_D.wav in Resources */,
 				4F3CC10521E4802400C66E7E /* LaunchScreen.storyboard in Resources */,
 				4F3CC10221E4802400C66E7E /* Assets.xcassets in Resources */,
+				4F6E8AA421ECA30B00964B8D /* 9_D.wav in Resources */,
+				4F6E8AA121ECA30B00964B8D /* 3_D.wav in Resources */,
+				4F6E8AA521ECA30B00964B8D /* 1_D.wav in Resources */,
+				4F6E8AA721ECA30B00964B8D /* 8_D.wav in Resources */,
+				4F6E8AAF21ECA51900964B8D /* 骑行结束_D.wav in Resources */,
+				4F6E8AA321ECA30B00964B8D /* 6_D.wav in Resources */,
+				4F6E8AAD21ECA51900964B8D /* 您的解锁码为_D.wav in Resources */,
 				4F3CC10021E4802300C66E7E /* Main.storyboard in Resources */,
+				4F6E8AA621ECA30B00964B8D /* 4_D.wav in Resources */,
+				4F6E8AA221ECA30B00964B8D /* 7_D.wav in Resources */,
+				4F6E8AAC21ECA51900964B8D /* 骑行结束_LH.wav in Resources */,
+				4F6E8AA021ECA30B00964B8D /* 0_D.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,13 +356,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ofoByHyx/Pods-ofoByHyx-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AVOSCloud/AVOSCloud.framework",
 				"${BUILT_PRODUCTS_DIR}/FTIndicator/FTIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloud.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FTIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,6 +426,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6E8A8721EC653700964B8D /* LeanCloudQuery.swift in Sources */,
+				4F6E8AB821ECBF4000964B8D /* SoundHelper.swift in Sources */,
 				4F2A8CCA21E9EBDF009283F2 /* LBXScanViewStyle.swift in Sources */,
 				4F3CC11021E5997500C66E7E /* ActivityWebController.swift in Sources */,
 				4F3CC0FB21E4802300C66E7E /* AppDelegate.swift in Sources */,

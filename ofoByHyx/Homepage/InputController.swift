@@ -42,8 +42,10 @@ extension HomeController {
         let newLength = text.count + string.count - range.length
         if newLength > 0 {
             useBikeBtn_input.layer.backgroundColor = UIColor(named: "themeColor")?.cgColor
+            useBikeBtn_input.isEnabled = true
         } else {
             useBikeBtn_input.layer.backgroundColor = UIColor(displayP3Red: 206/255, green: 206/255, blue: 206/255, alpha: 1).cgColor
+            useBikeBtn_input.isEnabled = false
         }
         
         return newLength <= 8
