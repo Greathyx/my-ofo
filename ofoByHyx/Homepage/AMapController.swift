@@ -214,6 +214,7 @@ extension HomeController {
     ///   - view: 被取消选择的标注
     func mapView(_ mapView: MAMapView!, didDeselect view: MAAnnotationView!) {
         FTIndicator.dismissNotification()
+        mapView.removeOverlays(mapView.overlays)
     }
     
     /// 设置导航路径折线的样式
@@ -265,8 +266,8 @@ extension HomeController {
             timeDesc = walkMinutes.description + "分钟"
         }
         
-        let hintTitle = "步行约" + timeDesc
-        let hintSubTitle = "距离" + walkManager.naviRoute!.routeLength.description + "米"
+        let hintTitle = "距离目的地" + walkManager.naviRoute!.routeLength.description + "米"
+        let hintSubTitle = "步行约" + timeDesc
         
         FTIndicator.setIndicatorStyle(.dark)
         FTIndicator.showNotification(with: UIImage(named: "clock"), title: hintTitle, message: hintSubTitle, autoDismiss: false, tapHandler: nil, completion: nil)
