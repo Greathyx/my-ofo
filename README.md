@@ -20,3 +20,6 @@ $ cd my-ofo
 $ pod install
 ```
 Then open `ofoByHyx.xcworkspace` with Xcode —> New Scheme —> Run
+
+# Screen Shots
+<img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1121547434995_.pic.jpg" width=250 alt="launch_img">    <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1131547434997_.pic_hd.jpg" width=250 alt="homepage">   <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1161547435000_.pic_hd.jpg" width=250 alt="scan_qr_code">     <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1171547435001_.pic_hd.jpg" width=250 alt="input_by_user">    <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1141547434998_.pic.jpg" width=250 alt="user_menu">   <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1181547435002_.pic_hd.jpg" width=250 alt="about_me">   <img src="https://github.com/Greathyx/my-ofo/blob/master/screenShots/1151547434999_.pic_hd.jpg" width=250 alt="activities">
