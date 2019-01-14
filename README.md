@@ -8,7 +8,7 @@ A simple demo of ofo app.
 * iOS 8.0 or later
 
 # Installation
-If you haven't installed CocoaPods, please install it first. See more on: https://cocoapods.org/
+If you haven't installed CocoaPods yet, please install it first. See more on: https://cocoapods.org/
 ```
 $ sudo gem install cocoapods
 ```
